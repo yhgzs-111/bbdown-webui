@@ -14,16 +14,16 @@ export default function BBDownWebUI() {
     Url: ''，
     UseTvApi: false,
     UseAppApi: false,
-    UseIntlApi: false，
+    UseIntlApi: false,
     UseMP4box: false,
     EncodingPriority: '',
     DfnPriority: '',
-    VideoOnly: false，
+    VideoOnly: false,
     AudioOnly: false,
-    DanmakuOnly: false，
+    DanmakuOnly: false,
     CoverOnly: false,
     SubOnly: false,
-    SkipMux: false，
+    SkipMux: false,
     SkipSubtitle: false,
     SkipCover: false,
     DownloadDanmaku: false,
@@ -35,8 +35,8 @@ export default function BBDownWebUI() {
     MultiFilePattern: '',
     SelectPage: ''，
     Language: '',
-    Cookie: ''，
-    AccessToken: ''，
+    Cookie: '',
+    AccessToken: '',
     WorkDir: '',
     Area: ''
   });
@@ -60,7 +60,7 @@ export default function BBDownWebUI() {
     fetchTasks();
     const interval = setInterval(fetchTasks, 2000);
     return () => clearInterval(interval);
-  }， [apiUrl]);
+  }, [apiUrl]);
 
   // 添加任务
   const handleAddTask = async () => {
@@ -591,7 +591,7 @@ export default function BBDownWebUI() {
               已完成 ({tasks.Finished.length})
             </h2>
             <div className="space-y-3">
-              {tasks.Finished.map((task， index) => (
+              {tasks.Finished.map((task, index) => (
                 <TaskCard key={`${task.Aid}-${index}`} task={task} isRunning={false} />
               ))}
             </div>
