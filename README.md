@@ -1,5 +1,7 @@
 # 在线使用：[https://yhgzs-111.github.io/bbdown-webui/](https://yhgzs-111.github.io/bbdown-webui/)
 
+请先在本地运行```BBdown serve```后正确填写**BBdown**服务端口
+
 # 简介
 
 本项目是**BBDown**的 Web 前端界面，用于在网页中以图形化界面调用**BBdown**的下载功能
