@@ -27,11 +27,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 使用最新推荐的 artifact 上传方式
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
