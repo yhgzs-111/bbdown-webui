@@ -11,7 +11,7 @@ export default function BBDownWebUI() {
   
   // 表单状态
   const [formData, setFormData] = useState({
-    Url: ''，
+    Url: '',
     UseTvApi: false,
     UseAppApi: false,
     UseIntlApi: false,
@@ -27,13 +27,13 @@ export default function BBDownWebUI() {
     SkipSubtitle: false,
     SkipCover: false,
     DownloadDanmaku: false,
-    DownloadDanmakuFormats: ''，
+    DownloadDanmakuFormats: '',
     SkipAi: true,
     VideoAscending: false,
     AudioAscending: false,
     FilePattern: '',
     MultiFilePattern: '',
-    SelectPage: ''，
+    SelectPage: '',
     Language: '',
     Cookie: '',
     AccessToken: '',
