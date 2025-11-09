@@ -11,13 +11,15 @@ jobs:
     permissions:
       pages: write
       contents: read
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Install dependencies
         run: npm ci
@@ -25,10 +27,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+      # 使用最新推荐的 artifact 上传方式
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./dist
 
-      - name: Publish Pages
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
