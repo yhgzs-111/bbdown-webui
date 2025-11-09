@@ -1,6 +1,8 @@
+# 在线使用：[https://yhgzs-111.github.io/bbdown-webui/](https://yhgzs-111.github.io/bbdown-webui/)
+
 # 简介
 
-本项目是 BBDown 的 Web 前端界面，用于在网页中以图形化界面调用**BBdown**的下载功能
+本项目是**BBDown**的 Web 前端界面，用于在网页中以图形化界面调用**BBdown**的下载功能
 
 **本项目仅供个人学习研究使用，请勿用于非法用途**
 
