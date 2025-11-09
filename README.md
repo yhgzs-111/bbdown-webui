@@ -1,16 +1,30 @@
-# React + Vite
+# 简介
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+本项目是 BBDown 的 Web 前端界面，用于在浏览器中输入 B 站视频链接并调用BBdown的下载功能。
 
-Currently, two official plugins are available:
+本项目仅供个人学习研究使用，请勿用于非法用途
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 环境准备
 
-## React Compiler
+请确保已安装以下工具：
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Node.js**
 
-## Expanding the ESLint configuration
+* **npm**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **BBdown**
+
+## 部署
+1. 转到**BBdown**所在目录，运行以下命令
+```code
+bbdown serve
+```
+2. 运行以下命令
+```code
+git clone https://github.com/yhgzs-111/bbdown-webui.git
+cd bbdown-webui
+npm install
+npm install lucide-react
+npm install -D tailwindcss@3 postcss@8 autoprefixer@10
+npm run dev
+```
