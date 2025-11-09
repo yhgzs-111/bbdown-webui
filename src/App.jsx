@@ -48,7 +48,7 @@ export default function BBDownWebUI() {
       if (response.ok) {
         const data = await response.json();
         setTasks(data);
-        setError('BBDown 服务已连接');
+        setError('');
       }
     } catch (err) {
       setError('无法连接到 BBDown 服务');
