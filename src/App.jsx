@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Download, Plus, Trash2, RefreshCw, Settings, ChevronDown, ChevronUp, Info, CheckCircle, XCircle, Loader } from 'lucide-react';
 
 export default function BBDownWebUI() {
-  const [apiUrl, setApiUrl] = useState('http://localhost:58682');
+  const [apiUrl, setApiUrl] = useState('http://localhost:23333');
   const [tasks, setTasks] = useState({ Running: [], Finished: [] });
   const [showAddTask, setShowAddTask] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [message, setMessage] = useState(''); // 成功或一般提示
   
   // 表单状态
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ export default function BBDownWebUI() {
       if (response.ok) {
         const data = await response.json();
         setTasks(data);
-        setError('');
+        setMessage('已成功连接到 BBDown 服务器');
       }
     } catch (err) {
       setError('无法连接到 BBDown 服务器');
@@ -257,11 +258,16 @@ export default function BBDownWebUI() {
             />
           </div>
 
-          {error && (
-            <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
-              {error}
-            </div>
-          )}
+{message && (
+  <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">
+    {message}
+  </div>
+)}
+{error && (
+  <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+    {error}
+  </div>
+)}
         </div>
 
         {/* 操作按钮 */}
