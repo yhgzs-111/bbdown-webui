@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Download, Plus, Trash2, RefreshCw, Settings, ChevronDown, ChevronUp, Info, CheckCircle, XCircle, Loader } from 'lucide-react';
 
 export default function BBDownWebUI() {
-  const [apiUrl, setApiUrl] = useState('http://localhost:58682');
+  const [apiUrl, setApiUrl] = useState('http://localhost:23333');
   const [tasks, setTasks] = useState({ Running: [], Finished: [] });
   const [showAddTask, setShowAddTask] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -48,10 +48,10 @@ export default function BBDownWebUI() {
       if (response.ok) {
         const data = await response.json();
         setTasks(data);
-        setError('');
+        setError('BBDown 服务已连接');
       }
     } catch (err) {
-      setError('无法连接到 BBDown 服务器');
+      setError('无法连接到 BBDown 服务');
     }
   };
 
@@ -169,7 +169,7 @@ export default function BBDownWebUI() {
         )}
         <div className="flex-1 min-w-0">
           <h3 className="font-medium text-gray-900 truncate mb-1">
-            {task.Title || task.Url || '未知标题'}
+            {task.标题 || task.Url || '未知标题'}
           </h3>
           <div className="text-sm text-gray-500 space-y-1">
             <div>AID: {task.Aid}</div>
@@ -233,7 +233,7 @@ export default function BBDownWebUI() {
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <Download className="w-8 h-8 text-blue-600" />
+              <下载 className="w-8 h-8 text-blue-600" />
               <h1 className="text-3xl font-bold text-gray-900">BBDown Web UI</h1>
             </div>
             <button
@@ -249,7 +249,7 @@ export default function BBDownWebUI() {
           <div className="flex gap-2 items-center">
             <label className="text-sm font-medium text-gray-700">API 地址:</label>
             <input
-              type="text"
+              输入="text"
               value={apiUrl}
               onChange={(e) => setApiUrl(e.target.value)}
               className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -321,7 +321,7 @@ export default function BBDownWebUI() {
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
-                    type="checkbox"
+                    输入="checkbox"
                     checked={formData.AudioOnly}
                     onChange={(e) => setFormData({ ...formData, AudioOnly: e.target.checked })}
                     className="w-4 h-4 text-blue-600"
@@ -330,7 +330,7 @@ export default function BBDownWebUI() {
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
-                    type="checkbox"
+                    输入="checkbox"
                     checked={formData.DownloadDanmaku}
                     onChange={(e) => setFormData({ ...formData, DownloadDanmaku: e.target.checked })}
                     className="w-4 h-4 text-blue-600"
@@ -339,7 +339,7 @@ export default function BBDownWebUI() {
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
-                    type="checkbox"
+                    输入="checkbox"
                     checked={formData.SkipSubtitle}
                     onChange={(e) => setFormData({ ...formData, SkipSubtitle: e.target.checked })}
                     className="w-4 h-4 text-blue-600"
@@ -351,11 +351,11 @@ export default function BBDownWebUI() {
               {/* 高级选项 */}
               <div>
                 <button
-                  type="button"
+                  输入="button"
                   onClick={() => setShowAdvanced(!showAdvanced)}
                   className="flex items-center gap-2 text-blue-600 hover:text-blue-700"
                 >
-                  <Settings className="w-4 h-4" />
+                  <设置 className="w-4 h-4" />
                   高级选项
                   {showAdvanced ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </button>
@@ -369,7 +369,7 @@ export default function BBDownWebUI() {
                         编码优先级
                       </label>
                       <input
-                        type="text"
+                        输入="text"
                         value={formData.EncodingPriority}
                         onChange={(e) => setFormData({ ...formData, EncodingPriority: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg"
@@ -381,7 +381,7 @@ export default function BBDownWebUI() {
                         清晰度优先级
                       </label>
                       <input
-                        type="text"
+                        输入="text"
                         value={formData.DfnPriority}
                         onChange={(e) => setFormData({ ...formData, DfnPriority: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg"
@@ -393,7 +393,7 @@ export default function BBDownWebUI() {
                         文件名模板
                       </label>
                       <input
-                        type="text"
+                        输入="text"
                         value={formData.FilePattern}
                         onChange={(e) => setFormData({ ...formData, FilePattern: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg"
@@ -405,7 +405,7 @@ export default function BBDownWebUI() {
                         选择分P
                       </label>
                       <input
-                        type="text"
+                        输入="text"
                         value={formData.SelectPage}
                         onChange={(e) => setFormData({ ...formData, SelectPage: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg"
@@ -417,9 +417,9 @@ export default function BBDownWebUI() {
                         Cookie
                       </label>
                       <input
-                        type="text"
+                        输入="text"
                         value={formData.Cookie}
-                        onChange={(e) => setFormData({ ...formData, Cookie: e.target.value })}
+                        onChange={(e) => setFormData({ ...formData, Cookie: e.target。value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg"
                         placeholder="Cookie字符串"
                       />
@@ -429,7 +429,7 @@ export default function BBDownWebUI() {
                         工作目录
                       </label>
                       <input
-                        type="text"
+                        输入="text"
                         value={formData.WorkDir}
                         onChange={(e) => setFormData({ ...formData, WorkDir: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg"
@@ -441,7 +441,7 @@ export default function BBDownWebUI() {
                         弹幕格式
                       </label>
                       <input
-                        type="text"
+                        输入="text"
                         value={formData.DownloadDanmakuFormats}
                         onChange={(e) => setFormData({ ...formData, DownloadDanmakuFormats: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg"
@@ -569,14 +569,14 @@ export default function BBDownWebUI() {
         )}
 
         {/* 正在运行的任务 */}
-        {tasks.Running.length > 0 && (
+        {tasks.Running。length > 0 && (
           <div className="mb-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <Loader className="w-5 h-5 text-blue-600 animate-spin" />
               正在下载 ({tasks.Running.length})
             </h2>
             <div className="space-y-3">
-              {tasks.Running.map((task) => (
+              {tasks.Running。map((task) => (
                 <TaskCard key={task.Aid} task={task} isRunning={true} />
               ))}
             </div>
@@ -588,10 +588,10 @@ export default function BBDownWebUI() {
           <div>
             <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-green-600" />
-              已完成 ({tasks.Finished.length})
+              已完成 ({tasks.Finished。length})
             </h2>
             <div className="space-y-3">
-              {tasks.Finished.map((task, index) => (
+              {tasks.Finished。map((task， index) => (
                 <TaskCard key={`${task.Aid}-${index}`} task={task} isRunning={false} />
               ))}
             </div>
@@ -601,7 +601,7 @@ export default function BBDownWebUI() {
         {/* 空状态 */}
         {tasks.Running.length === 0 && tasks.Finished.length === 0 && (
           <div className="bg-white rounded-lg shadow-md p-12 text-center">
-            <Download className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <下载 className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <p className="text-gray-500 text-lg">暂无下载任务</p>
             <p className="text-gray-400 text-sm mt-2">点击"添加下载任务"开始下载</p>
           </div>
