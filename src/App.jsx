@@ -50,9 +50,11 @@ export default function BBDownWebUI() {
         const data = await response.json();
         setTasks(data);
         setMessage('已成功连接到 BBDown 服务器');
+        setError('');
       }
     } catch (err) {
       setError('无法连接到 BBDown 服务器');
+      setMessage('');
     }
   };
 
